@@ -18,11 +18,13 @@ Este proyecto fue diseñado como una herramienta didáctica para:
 - Búsqueda binaria: Busca curso exacto tras ordenamiento por nombre.
 - Simulación de cola: Procesa solicitudes de revisión en orden FIFO.
 - Historial de cambios: Muestra acciones recientes en orden LIFO.
+  
 ¿Qué aprendí con este proyecto?
-- Implementaste listas para almacenar cursos, pilas para el historial de cambios y colas para solicitudes de revisión.
-- Comprendiste cómo manipular estas estructuras para simular comportamientos reales (LIFO, FIFO).
+Implementaste listas para almacenar cursos, pilas para el historial de cambios y colas para solicitudes de revisión.
+ Comprendiste cómo manipular estas estructuras para simular comportamientos reales (LIFO, FIFO).
 Separe funcionalidades en funciones específicas, facilitando la lectura y el mantenimiento del código.
-  ¿Qué mejoraría si tuviera más tiempo?
+
+¿Qué mejoraría si tuviera más tiempo?
   - Implementar clases para representar cursos, historial y cola, aplicando principios de programación orientada a objetos.
 Separar las funciones en diferentes archivos para que el programa sea más fácil de entender y mantener.
 
