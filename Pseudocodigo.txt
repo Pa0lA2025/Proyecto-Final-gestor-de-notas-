@@ -1,0 +1,201 @@
+Muchas más características que este gestor de notas nos da es una prevé explicación de lo que contiene nuestro gestor de notas. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Estructura general del código
+
+El código está estructurado envase a funciones, cada una responsable de una operación en específica del menú. El archivo principal del programa es “Gestor_notas.py”, el cual contiene varias funciones dentro de ellas están.
+
+•	Funciones para el manejo de curso: agregar, eliminas, mostrar, actualizar.
+•	Funciones de análisis: promedio, aprobados, reprobados.
+•	Funciones para ordenamiento: burbuja e inserción.
+•	Funciones de búsqueda lineal y binaria.
+•	Funciones de estructura de datos; pilas y cola.
+
+
+
+Explicación del uso de listas, pilas, colas, etc.
+
+Las listas: son la estructura de datos principal utilizada en el sistema. Permiten almacenar y manipular colecciones de elementos de forma ordenada y dinámica.
+ Pila: aunque no es obligatorio, una pila puede utilizarse si se desea implementar funcionalidades como deshacer la última acción (por ejemplo, eliminar la última asignatura ingresada).
+Cola: Las colas no son esenciales en la versión básica del sistema, pero pueden ser útiles si se desea procesar estudiantes en orden de llegada o manejar múltiples usuarios.
+
+
+Justificación de los algoritmos de ordenamiento implementados
+          El sistema implementa algoritmos de ordenamiento para organizar los datos académicos de forma que faciliten su análisis, visualización y comprensión. Por ejemplo:
+•	Ordenar asignaturas alfabéticamente.
+•	Ordenar estudiantes por promedio (de mayor a menor).
+•	Ordenar notas dentro de una asignatura para análisis adicional.
+
+
+
+Documentación breve de cada función o módulo
+
+	Registrar_curso(): agregar un nuevo curso a la lista validando los datos 
+	Mostrar_curso (): Muestra todos los cursos registrados
+	calcular_ promedio (): calcular el promedio general de las notas
+	Contar_aprobados (): cuenta cuantos cursos fueron a probados y reprobados. 
+	Buscar:curso:lineal (): buscar un corso mediante coincidencia parcial.
+	Actualizar_nota (): modificar la nota de un curso dentro de la lista en existencia 
+	Eliminar:curso(): eliminar curso tras confirmación del usuario asignado. 
+	Ordenar_burbuja(): ordena los cursos por sus notas 
+	Ordenar_insercion(): ordena los cursos por nombres.
+	Busqueda_binaria(): realiza la búsqueda eficiente de una lista odenada. 
+	Simula_cola(): simula el envio de solicitudes de revisión asignada.
+	Mostrar_hitorial(): muestra las utimas modificaciones realizadas y guardadas en la pila. 
+
+
+
+Diagrama general del sistema o pseudocódigo principal
+
+
+INICIO
+
+    DEFINIR listas: cursos, historial, cola_revision
+
+    FUNCIÓN agregar_curso(nombre, nota)
+        SI nombre está vacío
+            MOSTRAR "El nombre no puede estar vacío"
+            RETORNAR
+        SI nota no está entre 0 y 100
+            MOSTRAR "La nota debe estar entre 0 y 100"
+            RETORNAR
+        AGREGAR {"nombre": nombre, "nota": nota} a cursos
+        MOSTRAR mensaje de confirmación
+
+    FUNCIÓN listar_cursos()
+        SI cursos no está vacío
+            MOSTRAR lista de cursos con índice y nota
+        SINO
+            MOSTRAR "No hay cursos registrados"
+
+    FUNCIÓN promedio_notas_cursos()
+        SI cursos no está vacío
+            CALCULAR promedio de notas
+            MOSTRAR promedio
+        SINO
+            MOSTRAR "No hay cursos registrados"
+
+    FUNCIÓN contar_aprobados_reprobados()
+        CONTAR cursos con nota >= 60 como aprobados
+        CALCULAR reprobados = total - aprobados
+        MOSTRAR cantidad de aprobados y reprobados
+
+    FUNCIÓN buscar_lineal()
+        PEDIR nombre del curso
+        BUSCAR coincidencias parciales en cursos
+        SI se encuentra
+            MOSTRAR curso(s) encontrado(s)
+        SINO
+            MOSTRAR "Curso no encontrado"
+
+    FUNCIÓN actualizar_nota()
+        PEDIR nombre del curso
+        BUSCAR coincidencia exacta
+        SI se encuentra
+            PEDIR nueva nota
+            VALIDAR rango de nota
+            GUARDAR cambio en historial
+            ACTUALIZAR nota
+            MOSTRAR confirmación
+        SINO
+            MOSTRAR "Curso no encontrado"
+
+    FUNCIÓN eliminar_curso()
+        PEDIR nombre del curso
+        BUSCAR coincidencia exacta
+        SI se encuentra
+            PEDIR confirmación
+            SI confirmación es "s"
+                GUARDAR en historial
+                ELIMINAR curso
+                MOSTRAR confirmación
+            SINO
+                MOSTRAR "Eliminación cancelada"
+        SINO
+            MOSTRAR "Curso no encontrado"
+
+    FUNCIÓN ordenar_por_nota()
+        APLICAR ordenamiento burbuja descendente por nota
+        MOSTRAR cursos ordenados
+
+    FUNCIÓN ordenar_por_nombre()
+        APLICAR ordenamiento por inserción ascendente por nombre
+        MOSTRAR cursos ordenados
+
+    FUNCIÓN buscar_binaria()
+        ORDENAR cursos por nombre
+        PEDIR nombre del curso
+        APLICAR búsqueda binaria
+        SI se encuentra
+            MOSTRAR curso
+        SINO
+            MOSTRAR "Curso no encontrado"
+
+    FUNCIÓN simular_cola_revision()
+        MOSTRAR instrucciones
+        MIENTRAS entrada ≠ "fin"
+            AGREGAR curso a cola_revision
+        MIENTRAS cola_revision no esté vacía
+            MOSTRAR curso en revisión
+
+    FUNCIÓN mostrar_historial()
+        SI historial está vacío
+            MOSTRAR "No hay cambios registrados"
+        SINO
+            MOSTRAR historial en orden inverso
+
+    FUNCIÓN menu()
+        MIENTRAS True
+            MOSTRAR menú de opciones
+            PEDIR opción
+            SEGÚN opción:
+                1 → agregar_curso()
+                2 → listar_cursos()
+                3 → promedio_notas_cursos()
+                4 → contar_aprobados_reprobados()
+                5 → buscar_lineal()
+                6 → actualizar_nota()
+                7 → eliminar_curso()
+                8 → ordenar_por_nota()
+                9 → ordenar_por_nombre()
+                10 → buscar_binaria()
+                11 → simular_cola_revision()
+                12 → mostrar_historial()
+                13 → SALIR del programa
+                otro → MOSTRAR "Opción no válida"
+
+    LLAMAR menu()
+
+FIN
+	
+	
+	
+	
+	
+
+
+ 
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
